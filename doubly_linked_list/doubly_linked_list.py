@@ -62,7 +62,7 @@ class DoublyLinkedList:
             self.head = new_node
             self.tail = new_node
         else:
-            new_node.first = self.head
+            new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
 
