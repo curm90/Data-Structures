@@ -10,29 +10,19 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
-        # LEFT CASE
-        # check if our new nodes value is less than the current nodes value
         if value < self.value:
-            # does it have a child to the left?
             if self.left is not None:
-                # place our new node here
                 self.left.insert(value)
-            # otherwise
             else:
-                # repeat process for the left
                 self.left = BinarySearchTree(value)
-        # RIGHT CASE
-        # check if the new nodes value is greater than or equal to the current nodes value
         elif value >= self.value:
-            # does it have a child to the right?
             if self.right is not None:
-                # place our new node here
                 self.right.insert(value)
-            # otherwise
             else:
-                # repeat the process for the right
                 self.right = BinarySearchTree(value)
 
+    # Return True if the tree contains the value
+    # False if it does not
     def contains(self, target):
         if target == self.value:
             return True
