@@ -72,11 +72,11 @@ class BinarySearchTree:
         queue.enqueue(temp)
 
         # while something in queue
-        while queue.size > 0:
+        while queue.len() > 0:
             # pop off first item
-            queue.dequeue()
+            temp = queue.dequeue()
             # print item
-            print(temp)
+            print(temp.value)
 
             # if temp.left
             if temp.left:
@@ -91,7 +91,25 @@ class BinarySearchTree:
     # in an iterative depth first traversal
 
     def dft_print(self, node):
-        pass
+        # make a stack
+        stack = Stack()
+        temp = node
+        # add root to stack
+        stack.push(temp)
+        # while something in stack
+        while stack.len() > 0:
+            # pop off root and save in variable
+            temp = stack.pop()
+        # print value
+            print(temp.value)
+        # if temp left
+            if temp.left:
+                # push temp left ot stack
+                stack.push(temp.left)
+        # if temp right
+            if temp.right:
+                # push temp right to stack
+                stack.push(temp.right)
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
